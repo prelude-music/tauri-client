@@ -1,5 +1,6 @@
 import Track from "../api/Track.ts";
 import EnhancedSwitch from "enhanced-switch";
+import { invoke } from "@tauri-apps/api/tauri";
 
 class Player {
     public readonly container = document.createElement("div");
@@ -202,9 +203,24 @@ class Player {
         if (this.#currentAudio.src !== track.audio().href) this.#currentAudio.src = track.audio().href;
         this.#nextAudio.src = '';
         this.renderTrack();
+        this.updateDiscordIPC(track);
         this.#currentAudio.play().then();
         this.renderVolume();
         this.renderMediaSession();
+    }
+
+    /**
+     * Update the discord rich presence via IPC
+     * @param track the current track
+     */
+    private async updateDiscordIPC(track: Track): Promise<void> {
+        // return if we're not running in a Tauri Webview
+        if (!window.__TAURI__) return;
+
+        await invoke('rpc_update', {
+            state: track.album?.title || 'unknown',
+            details: track.title
+        } satisfies RpcUpdate);
     }
 
     private renderMediaSession() {
