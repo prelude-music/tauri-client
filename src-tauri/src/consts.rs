@@ -1,1 +1,0 @@
-pub const DISCORD_ID: &str = "1258141357000622162";

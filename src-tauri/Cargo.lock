@@ -261,7 +261,7 @@ checksum = "d38f2da7a0a2c4ccf0065be06397cc26a81f4e528be095826eee9d4adbb8c60f"
 dependencies = [
  "byteorder",
  "fnv",
- "uuid 1.9.1",
+ "uuid",
 ]
 
 [[package]]
@@ -580,18 +580,6 @@ dependencies = [
  "libc",
  "redox_users",
  "winapi",
-]
-
-[[package]]
-name = "discord-rich-presence"
-version = "0.2.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f632a41e3e97febf8edff46b1405f9875894c29e20a25c5abe566872226b3f84"
-dependencies = [
- "serde",
- "serde_derive",
- "serde_json",
- "uuid 0.8.2",
 ]
 
 [[package]]
@@ -1946,7 +1934,6 @@ checksum = "925383efa346730478fb4838dbe9137d2a47675ad789c546d150a6e1dd4ab31c"
 name = "prelude"
 version = "0.0.0"
 dependencies = [
- "discord-rich-presence",
  "serde",
  "serde_json",
  "tauri",
@@ -2595,7 +2582,7 @@ dependencies = [
  "serde",
  "tao-macros",
  "unicode-segmentation",
- "uuid 1.9.1",
+ "uuid",
  "windows 0.39.0",
  "windows-implement",
  "x11-dl",
@@ -2672,7 +2659,7 @@ dependencies = [
  "thiserror",
  "tokio",
  "url",
- "uuid 1.9.1",
+ "uuid",
  "webkit2gtk",
  "webview2-com",
  "windows 0.39.0",
@@ -2719,7 +2706,7 @@ dependencies = [
  "tauri-utils",
  "thiserror",
  "time",
- "uuid 1.9.1",
+ "uuid",
  "walkdir",
 ]
 
@@ -2753,7 +2740,7 @@ dependencies = [
  "tauri-utils",
  "thiserror",
  "url",
- "uuid 1.9.1",
+ "uuid",
  "webview2-com",
  "windows 0.39.0",
 ]
@@ -2771,7 +2758,7 @@ dependencies = [
  "raw-window-handle",
  "tauri-runtime",
  "tauri-utils",
- "uuid 1.9.1",
+ "uuid",
  "webkit2gtk",
  "webview2-com",
  "windows 0.39.0",
@@ -3114,15 +3101,6 @@ name = "utf-8"
 version = "0.7.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "09cc8ee72d2a9becf2f2febe0205bbed8fc6615b7cb429ad062dc7b7ddd036a9"
-
-[[package]]
-name = "uuid"
-version = "0.8.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bc5cf98d8186244414c848017f0e2676b3fcb46807f6668a97dfe67359a3c4b7"
-dependencies = [
- "getrandom 0.2.15",
-]
 
 [[package]]
 name = "uuid"
