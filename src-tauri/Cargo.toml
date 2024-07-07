@@ -1,0 +1,17 @@
+[package]
+name = "prelude"
+version = "0.0.0"
+description = "TODO:some great description goes here FIXME:change before publishing"
+authors = ["Prelude", "Kai <km127pl>", "Zefir"]
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "1", features = [] }
+
+[dependencies]
+tauri = { version = "1", features = ["shell-open"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[features]
+custom-protocol = ["tauri/custom-protocol"]
